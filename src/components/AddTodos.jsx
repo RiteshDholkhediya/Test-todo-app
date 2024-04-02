@@ -10,7 +10,7 @@ function AddTodos({ input, setInput, uid }) {
 
   function handleTodoSubmit(e) {
     e.preventDefault();
-    if (btn === "Update") {
+    if (btn === "Update") { // checking if button is used for update todoItem  or  add todoItem in the list
       if (input !== "") {
         dispatch(updateTodo(uid, input));
       }

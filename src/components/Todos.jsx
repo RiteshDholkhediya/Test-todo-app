@@ -5,23 +5,19 @@ import { MdDeleteOutline } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
 import { useEffect } from "react";
-// import { useEffect, useState } from "react";
 
 function Todos({ setUid, setInput }) {
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
-  //   const [todos, setTodos] = useState(getLocalItems());
-
-  //   getLocalItems();
 
   useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(todos));
+    localStorage.setItem("list", JSON.stringify(todos)); // added items to local storage
   }, [todos]);
 
   return (
     <>
       <ul className="list-none">
-        {todos &&
+        {todos &&  // display all the todos in list
           todos.length > 0 &&
           todos.map((todo) => (
             <li
